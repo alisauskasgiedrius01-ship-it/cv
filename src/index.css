@@ -1,0 +1,123 @@
+/* ── Open Sans (local) ────────────────────── */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Reset ────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* ── Design tokens ────────────────────────── */
+:root {
+  --accent:       #0071A6;
+  --text:         #272727;
+  --text-muted:   #6b7280;
+  --bg:           #ffffff;
+  --border:       #e5e7eb;
+  --transition01: all 0.2s ease;
+
+  font-family: 'Open Sans', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography ───────────────────────────── */
+h1 {
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 54px;
+  letter-spacing: 1px;
+  transition: var(--transition01);
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 44px;
+  letter-spacing: 1px;
+  transition: var(--transition01);
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  transition: var(--transition01);
+}
+
+h4,
+h5,
+h6 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  transition: var(--transition01);
+}
+
+/* ── Base ─────────────────────────────────── */
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100svh;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}

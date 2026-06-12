@@ -1,0 +1,2 @@
+/* Section-level styles go in each component's own .css file */
+@import "./style/animations.css";

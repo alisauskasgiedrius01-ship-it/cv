@@ -1,0 +1,106 @@
+/* ── Global reveal animations ─────────────── */
+
+/* Base reveal: hidden state */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Direction variants */
+.reveal-up    { transform: translateY(28px); }
+.reveal-down  { transform: translateY(-28px); }
+.reveal-left  { transform: translateX(-32px); }
+.reveal-right { transform: translateX(32px); }
+.reveal-zoom  { transform: scale(0.92); }
+
+.reveal-up.is-visible,
+.reveal-down.is-visible   { transform: translateY(0); }
+.reveal-left.is-visible,
+.reveal-right.is-visible  { transform: translateX(0); }
+.reveal-zoom.is-visible   { transform: scale(1); opacity: 1; }
+
+/* Stagger delays (apply with .delay-1 … .delay-8) */
+.delay-1 { transition-delay: 0.08s; }
+.delay-2 { transition-delay: 0.16s; }
+.delay-3 { transition-delay: 0.24s; }
+.delay-4 { transition-delay: 0.32s; }
+.delay-5 { transition-delay: 0.40s; }
+.delay-6 { transition-delay: 0.48s; }
+.delay-7 { transition-delay: 0.56s; }
+.delay-8 { transition-delay: 0.64s; }
+
+/* Section-title underline grow */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 0;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), #00c6a7);
+  transform: translateX(-50%);
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s;
+}
+.reveal.is-visible .section-title::after,
+.section-header.reveal.is-visible .section-title::after {
+  width: 60px;
+}
+
+/* Card pop-in (used for grids) */
+@keyframes card-pop {
+  0%   { opacity: 0; transform: translateY(24px) scale(0.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.card-pop {
+  opacity: 0;
+}
+.card-pop.is-visible {
+  animation: card-pop 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+/* Floating hero photo */
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* Slow spin on hero gradient ring */
+@keyframes ring-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Shimmer for badges */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Respect motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-up,
+  .reveal-down,
+  .reveal-left,
+  .reveal-right,
+  .reveal-zoom,
+  .card-pop {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

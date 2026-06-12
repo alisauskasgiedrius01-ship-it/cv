@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx vite *)",
+      "Bash(npx eslint *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5199/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:5199/?admin\")",
+      "Bash(pkill -f \"vite --port 5199\")",
+      "Bash(rm -f vite-admin.log)",
+      "Bash(node *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5198/007helper)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5198/)",
+      "Bash(pkill -f \"vite --port 5198\")",
+      "Bash(rm -f vite-gate.log)"
+    ]
+  }
+}

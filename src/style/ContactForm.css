@@ -1,0 +1,188 @@
+/* ── Section ──────────────────────────────── */
+.contact {
+  background: #f8fafc;
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Form card ────────────────────────────── */
+.contact-form {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Two-column row ───────────────────────── */
+.contact-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ── Field wrapper ────────────────────────── */
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ── Label ────────────────────────────────── */
+.contact-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+.contact-required {
+  color: var(--accent);
+  margin-left: 2px;
+}
+
+/* ── Input / Textarea ─────────────────────── */
+.contact-input,
+.contact-textarea {
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-family: "Open Sans", system-ui, sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  background: #f8fafc;
+  outline: none;
+  transition: var(--transition01);
+  resize: none;
+  width: 100%;
+}
+
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+  color: #b0b8c4;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  border-color: var(--accent);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 113, 166, 0.1);
+  transform: translateY(-1px);
+}
+
+.contact-label {
+  transition: color 0.25s ease;
+}
+
+.contact-field:focus-within .contact-label {
+  color: var(--accent);
+}
+
+.contact-input--error {
+  border-color: #ef4444;
+  background: #fff5f5;
+}
+
+.contact-input--error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* ── Inline validation error ──────────────── */
+.contact-error {
+  font-size: 12px;
+  color: #ef4444;
+  font-weight: 500;
+}
+
+/* ── Footer row: status + button ─────────── */
+.contact-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ── Status messages ──────────────────────── */
+.contact-status {
+  font-size: 14px;
+  font-weight: 500;
+  flex: 1;
+}
+
+.contact-status--success {
+  color: #16a34a;
+}
+
+.contact-status--error {
+  color: #ef4444;
+}
+
+/* ── Button ───────────────────────────────── */
+.contact-btn {
+  flex-shrink: 0;
+}
+
+.contact-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Spinner ──────────────────────────────── */
+.contact-spinner {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Honeypot — completely hidden ─────────── */
+.contact-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Tablet ───────────────────────────────── */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 32px 24px;
+  }
+
+  .contact-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ── Mobile ───────────────────────────────── */
+@media (max-width: 856px) {
+  .contact {
+    padding: 40px 0;
+  }
+}
