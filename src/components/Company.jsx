@@ -162,9 +162,6 @@ function Company() {
             headerVisible ? "is-visible" : ""
           }`}
         >
-          <Editable editKey="company.label" label="Etiketė" className="section-label">
-            {t.label}
-          </Editable>
           <Editable as="h2" editKey="company.title" label="Antraštė" className="section-title">
             {t.title}
           </Editable>

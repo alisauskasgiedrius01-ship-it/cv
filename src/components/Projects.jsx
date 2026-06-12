@@ -142,9 +142,7 @@ function Projects() {
             careerVisible ? "is-visible" : ""
           }`}
         >
-          <Editable editKey="projects.careerLabel" label="Etiketė" className="section-label">
-            {t.careerLabel}
-          </Editable>
+
           <Editable as="h2" editKey="projects.careerTitle" label="Antraštė" className="section-title">
             {t.careerTitle}
           </Editable>
@@ -173,9 +171,7 @@ function Projects() {
             projectsVisible ? "is-visible" : ""
           }`}
         >
-          <Editable editKey="projects.projectsLabel" label="Etiketė" className="section-label">
-            {t.projectsLabel}
-          </Editable>
+
           <Editable as="h2" editKey="projects.projectsTitle" label="Antraštė" className="section-title">
             {t.projectsTitle}
           </Editable>

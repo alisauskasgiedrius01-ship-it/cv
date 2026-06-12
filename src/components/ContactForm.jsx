@@ -94,9 +94,6 @@ function ContactForm() {
             headerVisible ? "is-visible" : ""
           }`}
         >
-          <Editable editKey="contact.label" label="Etiketė" className="section-label">
-            {t.label}
-          </Editable>
           <Editable as="h2" editKey="contact.title" label="Antraštė" className="section-title">
             {t.title}
           </Editable>
